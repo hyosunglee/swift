@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // 카카오로그인
-    KakaoSDKCommon.initSDK(appKey: "a6805a4477a6f1e027653ee2b7de8e73")
+    KakaoSDKCommon.initSDK(appKey: "123456789")
     
     // firebase
     FirebaseApp.configure()
