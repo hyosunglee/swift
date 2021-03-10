@@ -1,0 +1,11 @@
+# 키보드 내리기
+
+```swift
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+
+          self.view.endEditing(true)
+
+    }
+```
+출처 : 
+[https://zeddios.tistory.com/132](https://zeddios.tistory.com/132)
