@@ -1,0 +1,24 @@
+// 보내는 곳 
+Class appdelegate {
+
+	var paramKeycode : String?
+
+}
+
+// 받는 곳 클래스 어디든
+let ad = UIApplication.shared.delegate as? AppDelegate
+let keycode = ad?.paramKeycode
+print(“PL로 이동된 값 “,keycode!)
+// 보내는 곳 
+Class appdelegate {
+
+	var paramKeycode : String?
+
+}
+
+// 받는 곳 클래스 어디든
+let ad = UIApplication.shared.delegate as? AppDelegate
+let keycode = ad?.paramKeycode
+print(“PL로 이동된 값 “,keycode!)
+https://its-blog.tistory.com/16
+
