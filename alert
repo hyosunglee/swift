@@ -1,0 +1,9 @@
+let alert = UIAlertController(title: "삭제하시겠습니까?", message: "정말로?", preferredStyle: UIAlertController.Style.alert)
+            
+alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                  print("Handle Cancel Logic here")           
+}))            
+alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                  print("Handle Ok logic here")}))
+}))
+self.present(alert, animated: false, completion: nil)
