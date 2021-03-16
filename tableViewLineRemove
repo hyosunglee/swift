@@ -1,0 +1,1 @@
+tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
