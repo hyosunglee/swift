@@ -1,0 +1,11 @@
+// 카카오톡 설치여부 X 카카오 웹 로그인
+            AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(“에러체크중”,error)
+                }
+                else {
+                    print(“loginWithKakaoAccount() success.”)
+                    //do something
+                    _ = oauthToken
+                }
+            }
