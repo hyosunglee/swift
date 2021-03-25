@@ -1,0 +1,24 @@
+Escaping_Closure 
+
+A closure is said to escape a function when the closure is passed as an argument to the function, but is called after the function returns. 
+
+클로저가 함수로부터 Escape 한다는 것은 
+해당함수의 인자로 클로저가 전달되지만, 함수가 반환된 후 실행되는 것을 의미합니다. 
+
+함수의 인자가 함수의 영역을 탈출하여 함수밖에서 사용할 수 있는 개념은 기존에 우리가 알고 있던 변수의 scope개념을 무시합니다. 
+
+함수에서 선언된 로컬변수가 로컬변수의 영역을 뛰어넘어 함수 밖에서도 유효 
+
+일반 로컬 변수가 함수 밖에서 살아있는 것은 전역 변수를 함수에 가져와서 값을 새로주는 것과
+크게 다르지 않아 보입니다.
+
+클로저의 Escaping 은 A 함수가 마무리된 상태에서만 B 함수가 실행되도록 함수를 작성할 수 있다는 점에서 유용합니다.
+
+함수의 실행순서 보장의 이점 >> HTTP 통신
+
+Alamofire.request(urlRequest).responseJSON { response in
+  // handle response
+}
+
+
+출처 : 죄송...! 어디서 찾은 자료인지 ㅠ 
