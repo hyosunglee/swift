@@ -1,0 +1,51 @@
+func isInternetAvailable() -> Bool
+        {
+            var zeroAddress = sockaddr_in()
+            zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+            zeroAddress.sin_family = sa_family_t(AF_INET)
+            
+            let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+                $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                    SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+                }
+            }
+            
+            var flags = SCNetworkReachabilityFlags()
+
+            if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+
+                return false
+
+            }
+
+            let isReachable = flags.contains(.reachable)
+            let needsConnection = flags.contains(.connectionRequired)
+
+            return (isReachable && !needsConnection)
+        }
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+
+ if(isInternetAvailable)(){
+         
+        //internet avilable
+         
+        } else {
+            let alert = UIAlertController(title: "인터넷 연결 실패", message: "앱이 종료됩니다.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                print("Disconneted")
+                exit(0)
+                        
+                    }
+            alert.addAction(okAction)
+            self.present(alert, animated: false, completion: nil)
+         
+        //internet 'not' avilable
+         
+        }
+
+}
+
+Sorry I miss origin source
+
