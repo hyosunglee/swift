@@ -1,0 +1,31 @@
+Wrapping
+
+Optional 타입은 기본적으로 wrap되어 있는 상태 ►
+
+var optionalString: String? = “Hello”
+print(optionalString)
+// 출력 결과: ► Optional(“Hello”)
+--------------------------------
+(Forced) Unwrapping
+
+var optionalString: String? = “Hello”
+print(optionalString!)
+// 출력 결과: Hello
+--------------------------------
+Optional Binding
+
+Optional Binding을 사용하면 느낌표 없이 Optional 타입의 변수 값을 출력할 수 있어서 좀 더 안전한 형태로 값을 얻을 수 있다.
+
+// Optional type으로 선언한 myNumber
+let myNumber: Int? = 1234
+if let actualNumber = myNumber {
+ print(“\(myNumber)은 실제로 \(actualNumber)입니다.”)
+} else {
+ print(“\(myNumber)는 변환될 수 없습니다.”)
+}
+// 출력 결과 : Optional(1234)은 실제로 1234입니다.
+print(actualNumber) // error
+
+
+출처 : https://medium.com/@codenamehong/swift-optional-1-54ae4d37ee09
+
