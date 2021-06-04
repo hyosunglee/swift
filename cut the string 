@@ -1,0 +1,13 @@
+String 자르기
+
+let time:String?
+time = element["DTTM"] as? String
+
+let timeIdx:String.Index = time!.index(time!.startIndex,offsetBy :10)
+let timeResult = String(time![...timeIdx])
+
+PL_111VO.DTTM = timeResult                        
+
+
+// time!.startIndex,offsetBy :10 ~ time![...timeIdx]
+// 10번째 부터 ~ 마지막 까지 자르고 제거 
