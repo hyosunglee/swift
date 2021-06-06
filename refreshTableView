@@ -1,0 +1,21 @@
+테이블 뷰 새로고침
+
+
+  lazy var refreshController: UIRefreshControl={
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(updateUI), for:UIControl.Event.valueChanged)
+        return refresh
+    }()
+
+    @objc func updateUI() {
+        // 테이블뷰에 입력되는 데이터를 갱신한다
+        refreshController.endRefreshing()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.addSubview(refreshController)
+}
+
+
+
+// thank u bro Sreenuvasula Reddy
