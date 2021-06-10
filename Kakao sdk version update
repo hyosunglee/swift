@@ -1,0 +1,14 @@
+// 우선 삭제 
+rm Podfile.lock
+
+// 코코아팟 업데이트 
+sudo gem install cocoapods 
+
+
+Pod file 가서 
+
+pod ‘KakaoSDKCommon’, ‘~> 2.4.0’
+pod ‘KakaoSDKAuth’, ‘~> 2.4.0’
+pod ‘KakaoSDKUser’, ‘~> 2.4.0’
+
+해당 버전 입력 후 pod install
