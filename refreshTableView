@@ -1,21 +1,30 @@
 테이블 뷰 새로고침
 
 
-  lazy var refreshController: UIRefreshControl={
-        let refresh = UIRefreshControl()
-        refresh.addTarget(self, action: #selector(updateUI), for:UIControl.Event.valueChanged)
-        return refresh
-    }()
 
-    @objc func updateUI() {
-        // 테이블뷰에 입력되는 데이터를 갱신한다
-        refreshController.endRefreshing()
-    }
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.addSubview(refreshController)
+        refreshController()
 }
-
-
-
-// thank u bro Sreenuvasula Reddy
+func refreshController(){
+        let refresh = UIRefreshControl()
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:
+                                              #selector(updateUI),
+                                              for: .valueChanged)
+        refresh.addTarget(self, action: #selector(updateUI), for:UIControl.Event.valueChanged)
+        if #available(iOS 10.0, *){
+            tableView.refreshControl = refresh
+        } else {
+            tableView.addSubview(refresh)
+        }
+        print("업데이트 콘솔2 ")
+    }
+    @objc func updateUI(refresh: UIRefreshControl) {
+        ReadPuller() // my Communication func
+ 
+        tableView.reloadData()
+        DispatchQueue.main.async {
+              self.tableView.refreshControl?.endRefreshing()
+        }
+    }
