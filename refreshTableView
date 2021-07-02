@@ -28,3 +28,12 @@ func refreshController(){
               self.tableView.refreshControl?.endRefreshing()
         }
     }
+
+
+
+Tip 
+
+Json data 초기화 실패 타입문제 
+myPage 배열에서 데이터가 다시 한 곳에 모임 
+채우고 리프레쉬할 때 해당배열을 비우기 (제거) 
+
