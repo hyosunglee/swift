@@ -1,0 +1,13 @@
+@IBAction func popUp(_ sender: Any) {
+        guard let hvc = self.storyboard?.instantiateViewController(identifier: "popupVC") as? EditPrayAlertVC else { return }
+        hvc.preferredContentSize = CGSize(width: 100, height: 150)
+        showPopup(hvc, sourceView: sender as! UIView)
+
+    }
+    private func showPopup(_ controller: UIViewController, sourceView: UIView) {
+        let presentationController = AlwaysPresentAsPopover.configurePresentation(forController: controller)
+        presentationController.sourceView = sourceView
+        presentationController.sourceRect = sourceView.bounds
+        presentationController.permittedArrowDirections = [.down, .up]
+        self.present(controller, animated: true)
+    }
