@@ -1,0 +1,6 @@
+Text(text)
+                    .foregroundColor(Color.white)
+                    .padding(.top, 100)
+                    .padding(.bottom, 100)
+                    .padding(.leading, 100)
+                    .padding(.trailing, 100)
