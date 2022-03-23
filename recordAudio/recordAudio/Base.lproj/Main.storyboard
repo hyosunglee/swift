@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MyR-wu-F9v">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="recordAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="List" id="wpb-Ae-p7b"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="1588"/>
+        </scene>
+        <!--녹음-->
+        <scene sceneID="DUF-zC-wWe">
+            <objects>
+                <viewController id="QD7-Ne-jEr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mjg-u3-hAj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lvd-T8-uRK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="녹음" id="wWE-RX-9Tp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIi-C3-mB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="1588"/>
+        </scene>
+        <!--계정-->
+        <scene sceneID="6t3-Aw-gie">
+            <objects>
+                <viewController id="jdk-bR-ORy" customClass="InfoVC" customModule="recordAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eMP-Rl-Xdx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VPT-MU-ySa">
+                                <rect key="frame" x="173" y="508.5" width="68" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성명" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqT-89-K1i">
+                                        <rect key="frame" x="0.0" y="0.0" width="26" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORM-5v-FUh">
+                                        <rect key="frame" x="42" y="0.0" width="26" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flame" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QCJ-Hn-Iiq">
+                                <rect key="frame" x="157" y="378" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Xwo-Bm-2b0"/>
+                                    <constraint firstAttribute="height" constant="100" id="dId-WJ-PWr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8FF-cE-cNd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VPT-MU-ySa" firstAttribute="centerX" secondItem="8FF-cE-cNd" secondAttribute="centerX" id="8QR-3O-PFn"/>
+                            <constraint firstItem="VPT-MU-ySa" firstAttribute="top" secondItem="QCJ-Hn-Iiq" secondAttribute="bottom" constant="30" id="DDl-fG-bWc"/>
+                            <constraint firstItem="QCJ-Hn-Iiq" firstAttribute="centerY" secondItem="8FF-cE-cNd" secondAttribute="centerY" id="M5s-L9-FBO"/>
+                            <constraint firstItem="QCJ-Hn-Iiq" firstAttribute="centerX" secondItem="8FF-cE-cNd" secondAttribute="centerX" id="Vii-4W-pvP"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="계정" id="wgM-F4-vyw" userLabel="계정"/>
+                    <connections>
+                        <outlet property="imageView" destination="QCJ-Hn-Iiq" id="hbo-dI-Jev"/>
+                        <outlet property="nameR" destination="ORM-5v-FUh" id="RKp-Ot-f7c"/>
+                        <outlet property="nameT" destination="VPT-MU-ySa" id="GmK-xl-ClE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPu-d8-ZZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-883" y="1588"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xMq-Uo-ykO">
+            <objects>
+                <tabBarController id="MyR-wu-F9v" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mUR-WK-EUL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jdk-bR-ORy" kind="relationship" relationship="viewControllers" id="dnl-i6-6pT"/>
+                        <segue destination="QD7-Ne-jEr" kind="relationship" relationship="viewControllers" id="V1u-7g-i38"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="HJk-wV-VrX"/>
+                        <segue destination="kYi-0R-09p" kind="relationship" relationship="viewControllers" id="7cM-yO-9mk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xuT-Dv-aCT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="804"/>
+        </scene>
+        <!--Swift UiVC-->
+        <scene sceneID="AwN-6S-kfy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOX-gV-PjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="xBM-O5-eld" customClass="SwiftUiVC" customModule="recordAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3yL-Bc-ypk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0d-iZ-GcW">
+                                <rect key="frame" x="10" y="98" width="394" height="31"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <color key="baseForegroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="ymO-sU-cwQ" kind="show" destinationCreationSelector="howSwiftUIView:" id="xFA-bJ-mgU"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="926-AK-cDk">
+                                <rect key="frame" x="10" y="128" width="394" height="675"/>
+                                <connections>
+                                    <segue destination="YeQ-gt-sNC" kind="embed" destinationCreationSelector="embedSwiftUIView:" id="rm8-bK-euX"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ljw-X0-MA9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q0d-iZ-GcW" firstAttribute="leading" secondItem="Ljw-X0-MA9" secondAttribute="leading" constant="10" id="3HZ-a7-oEs"/>
+                            <constraint firstItem="926-AK-cDk" firstAttribute="top" secondItem="Q0d-iZ-GcW" secondAttribute="top" constant="30" id="4MS-cm-8RF"/>
+                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="bottom" secondItem="926-AK-cDk" secondAttribute="bottom" constant="10" id="Hc8-LY-pqS"/>
+                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="trailing" secondItem="926-AK-cDk" secondAttribute="trailing" constant="10" id="Jfw-Df-Rrb"/>
+                            <constraint firstItem="926-AK-cDk" firstAttribute="leading" secondItem="Ljw-X0-MA9" secondAttribute="leading" constant="10" id="OLH-8u-SnH"/>
+                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="trailing" secondItem="Q0d-iZ-GcW" secondAttribute="trailing" constant="10" id="aro-0i-jfW"/>
+                            <constraint firstItem="Q0d-iZ-GcW" firstAttribute="top" secondItem="Ljw-X0-MA9" secondAttribute="top" constant="10" id="lr6-hg-ux1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VAw-Sa-ynH"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2126.0869565217395" y="801.5625"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="XL2-RP-Oes">
+            <objects>
+                <hostingController id="ymO-sU-cwQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="chc-xi-uMT"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xt-4M-Sxr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084.057971014493" y="801.5625"/>
+        </scene>
+        <!--swiftUI-->
+        <scene sceneID="7lN-pY-09k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYi-0R-09p" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="swiftUI" id="4tW-Nw-Hev"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9OU-C3-cX0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xBM-O5-eld" kind="relationship" relationship="rootViewController" id="gba-Hk-5Nd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tw-GX-BmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1215.9420289855072" y="801.5625"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="UeK-yO-gCd">
+            <objects>
+                <hostingController id="YeQ-gt-sNC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6FC-0m-FMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3084" y="1606"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flame" catalog="system" width="108" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
