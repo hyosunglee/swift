@@ -119,14 +119,19 @@
         <!--Swift UiVC-->
         <scene sceneID="AwN-6S-kfy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YOX-gV-PjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="xBM-O5-eld" customClass="SwiftUiVC" customModule="recordAudio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3yL-Bc-ypk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="926-AK-cDk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <connections>
+                                    <segue destination="YeQ-gt-sNC" kind="embed" destinationCreationSelector="embedSwiftUIView:" id="rm8-bK-euX"/>
+                                </connections>
+                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0d-iZ-GcW">
-                                <rect key="frame" x="10" y="98" width="394" height="31"/>
+                                <rect key="frame" x="0.0" y="752" width="414" height="31"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button">
@@ -136,28 +141,23 @@
                                     <segue destination="ymO-sU-cwQ" kind="show" destinationCreationSelector="howSwiftUIView:" id="xFA-bJ-mgU"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="926-AK-cDk">
-                                <rect key="frame" x="10" y="128" width="394" height="675"/>
-                                <connections>
-                                    <segue destination="YeQ-gt-sNC" kind="embed" destinationCreationSelector="embedSwiftUIView:" id="rm8-bK-euX"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ljw-X0-MA9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Q0d-iZ-GcW" firstAttribute="leading" secondItem="Ljw-X0-MA9" secondAttribute="leading" constant="10" id="3HZ-a7-oEs"/>
-                            <constraint firstItem="926-AK-cDk" firstAttribute="top" secondItem="Q0d-iZ-GcW" secondAttribute="top" constant="30" id="4MS-cm-8RF"/>
-                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="bottom" secondItem="926-AK-cDk" secondAttribute="bottom" constant="10" id="Hc8-LY-pqS"/>
-                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="trailing" secondItem="926-AK-cDk" secondAttribute="trailing" constant="10" id="Jfw-Df-Rrb"/>
-                            <constraint firstItem="926-AK-cDk" firstAttribute="leading" secondItem="Ljw-X0-MA9" secondAttribute="leading" constant="10" id="OLH-8u-SnH"/>
-                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="trailing" secondItem="Q0d-iZ-GcW" secondAttribute="trailing" constant="10" id="aro-0i-jfW"/>
-                            <constraint firstItem="Q0d-iZ-GcW" firstAttribute="top" secondItem="Ljw-X0-MA9" secondAttribute="top" constant="10" id="lr6-hg-ux1"/>
+                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="trailing" secondItem="926-AK-cDk" secondAttribute="trailing" id="2ps-jI-o3z"/>
+                            <constraint firstItem="926-AK-cDk" firstAttribute="top" secondItem="Ljw-X0-MA9" secondAttribute="top" id="DHX-Qc-ibe"/>
+                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="trailing" secondItem="Q0d-iZ-GcW" secondAttribute="trailing" id="Y7N-Xv-npa"/>
+                            <constraint firstItem="Q0d-iZ-GcW" firstAttribute="leading" secondItem="Ljw-X0-MA9" secondAttribute="leading" id="ZBv-KZ-EeW"/>
+                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="bottom" secondItem="926-AK-cDk" secondAttribute="bottom" id="sdp-uF-XZZ"/>
+                            <constraint firstItem="Ljw-X0-MA9" firstAttribute="bottom" secondItem="Q0d-iZ-GcW" secondAttribute="bottom" constant="30" id="wbR-HJ-JG9"/>
+                            <constraint firstItem="926-AK-cDk" firstAttribute="leading" secondItem="Ljw-X0-MA9" secondAttribute="leading" id="x9U-R7-wGi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VAw-Sa-ynH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOX-gV-PjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2126.0869565217395" y="801.5625"/>
         </scene>
@@ -171,11 +171,11 @@
             </objects>
             <point key="canvasLocation" x="3084.057971014493" y="801.5625"/>
         </scene>
-        <!--swiftUI-->
+        <!--swiftUI + Main-->
         <scene sceneID="7lN-pY-09k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYi-0R-09p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="swiftUI" id="4tW-Nw-Hev"/>
+                    <tabBarItem key="tabBarItem" title="swiftUI + Main" id="4tW-Nw-Hev"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9OU-C3-cX0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

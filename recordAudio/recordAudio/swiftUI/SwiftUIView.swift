@@ -14,24 +14,42 @@ struct SwiftUIView: View {
     var Frame :(CGFloat, CGFloat) = (Width: 300, height: 300)
     
     var body: some View {
-        VStack {
+        
+    
+        ZStack{
+            AngularGradient(gradient: Gradient(colors:[.red,.orange,.yellow,.green,.blue,.purple]), center: .center)
+                            .edgesIgnoringSafeArea(.all)
+            
+            
+            
+            
             Text(text)
                 .foregroundColor(Color.white)
-                .padding(.top, -200)
-            HStack {
-                Image(image)
-                    .resizable()
-                    .frame(width: Frame.0, height: Frame.1)
+                .padding(.top, -300)
+            Image(image)
+                .resizable()
+                .frame(width: Frame.0, height: Frame.1)
+                .border(Color.blue, width: 5)
+            VStack {
                 
-                Text("Hi princess")
-                    .foregroundColor(Color.white)
-                    .padding(.top, -200)
-                Text(text)
-                    .foregroundColor(Color.white)
-                    .padding(.top, 100)
+                HStack(alignment: .center, spacing: 0) {
+                    Group{
+                        Text("Hi princess")
+                            .foregroundColor(Color.white)
+                            .padding(.top, -200)
+                            .border(Color.red, width: 5)
+                        Text(text)
+                            .foregroundColor(Color.white)
+                            .padding(.bottom, 0)
+                            .border(Color.green, width: 5)
+                        
+                    }
+                }
             }
+            .font(.largeTitle)
         }
-        .font(.largeTitle)
+    
+        
     }
 }
 
