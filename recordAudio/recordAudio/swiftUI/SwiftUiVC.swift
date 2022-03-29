@@ -19,7 +19,7 @@ class SwiftUiVC: UIViewController {
     @IBSegueAction func howSwiftUIView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(
             coder: coder, rootView:
-                SwiftUIView(text: "떼지 여기있음!", image: "IMG_4053",Frame: (100, 100))
+                SwiftUIView(text: "여기있음!", image: "hoho",Frame: (100, 100))
             
             
         )
@@ -28,7 +28,7 @@ class SwiftUiVC: UIViewController {
     @IBSegueAction func embedSwiftUIView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(
             coder: coder, rootView:
-                SwiftUIView(text: "떼지는 어디에?!", image: "picha", Frame: (300, 300)))
+                SwiftUIView(text: "어디에?!", image: "picha", Frame: (300, 300)))
     }
     
 }

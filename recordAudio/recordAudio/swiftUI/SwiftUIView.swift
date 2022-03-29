@@ -13,15 +13,16 @@ struct SwiftUIView: View {
     var image : String
     var Frame :(CGFloat, CGFloat) = (Width: 300, height: 300)
     
+    @State private var showAddView = true
+
+    
     var body: some View {
         
     
         ZStack{
             AngularGradient(gradient: Gradient(colors:[.red,.orange,.yellow,.green,.blue,.purple]), center: .center)
                             .edgesIgnoringSafeArea(.all)
-            
-            
-            
+
             
             Text(text)
                 .foregroundColor(Color.white)
@@ -47,7 +48,13 @@ struct SwiftUIView: View {
                 }
             }
             .font(.largeTitle)
+            
+            }
+        .sheet(isPresented: $showAddView) {
+            AddView(isPresented: self.$showAddView)
+
         }
+        
     
         
     }
@@ -56,6 +63,22 @@ struct SwiftUIView: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         SwiftUIView(text: "Simple Text", image: "String", Frame: (300, 300))
+        
+    }
+}
+
+struct AddView: View {
+    @Binding var isPresented: Bool
+
+    var body: some View {
+        ZStack{
+            AngularGradient(gradient: Gradient(colors:[.red,.orange,.yellow,.green,.blue,.purple]), center: .center)
+                            .edgesIgnoringSafeArea(.all)
+            
+            Button("Dismiss") {
+                self.isPresented = true
+            }
+        }
         
     }
 }
