@@ -1,0 +1,7 @@
+cocoapod
+
+sudo gem install cocoapods
+
+pod setup
+
+pod init

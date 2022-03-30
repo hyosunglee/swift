@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eck-K8-edd">
-                                <rect key="frame" x="5" y="49" width="404" height="759"/>
+                                <rect key="frame" x="5" y="544" width="404" height="264"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioListCell" id="scS-MC-F7L" customClass="AudioListCell" customModule="recordAudio" customModuleProvider="target">
@@ -48,7 +49,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eck-K8-edd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="9dr-WG-Cb3"/>
+                            <constraint firstItem="eck-K8-edd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="500" id="9dr-WG-Cb3"/>
                             <constraint firstItem="eck-K8-edd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="jfx-4W-FHH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eck-K8-edd" secondAttribute="trailing" constant="5" id="k8D-pQ-iUI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eck-K8-edd" secondAttribute="bottom" constant="5" id="s7b-d5-TxV"/>
@@ -67,18 +68,79 @@
         <!--녹음-->
         <scene sceneID="DUF-zC-wWe">
             <objects>
-                <viewController id="QD7-Ne-jEr" sceneMemberID="viewController">
+                <viewController id="QD7-Ne-jEr" customClass="RecordingVC" customModule="recordAudio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mjg-u3-hAj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOR-0O-k3N" customClass="EAGLView">
+                                <rect key="frame" x="10" y="54" width="394" height="378"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GOR-0O-k3N" secondAttribute="height" multiplier="197:64" constant="-769.53125" id="sei-nP-dRL"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="WCY-iP-WJj">
+                                <rect key="frame" x="10" y="551" width="394" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDl-33-EU5">
+                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="70"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startPlay:" destination="QD7-Ne-jEr" eventType="touchUpInside" id="81F-Rn-gzY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-jO-Inh">
+                                        <rect key="frame" x="149.5" y="0.0" width="95" height="70"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <imageReference key="image" image="record.circle" catalog="system" symbolScale="large"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startRecord:" destination="QD7-Ne-jEr" eventType="touchUpInside" id="Mdl-iP-Khh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDb-3Z-4d8">
+                                        <rect key="frame" x="299.5" y="0.0" width="94.5" height="70"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <imageReference key="image" image="square.and.arrow.down.fill" catalog="system" symbolScale="large"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveAudio:" destination="QD7-Ne-jEr" eventType="touchUpInside" id="89B-r1-N9H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="7mW-8a-cOj"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lvd-T8-uRK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WCY-iP-WJj" firstAttribute="leading" secondItem="lvd-T8-uRK" secondAttribute="leading" constant="10" id="Ksy-43-UZX"/>
+                            <constraint firstItem="WCY-iP-WJj" firstAttribute="centerX" secondItem="lvd-T8-uRK" secondAttribute="centerX" id="Od6-pR-yun"/>
+                            <constraint firstItem="GOR-0O-k3N" firstAttribute="top" secondItem="lvd-T8-uRK" secondAttribute="top" constant="10" id="T61-7i-BkP"/>
+                            <constraint firstItem="GOR-0O-k3N" firstAttribute="leading" secondItem="lvd-T8-uRK" secondAttribute="leading" constant="10" id="aDF-ig-RAU"/>
+                            <constraint firstItem="lvd-T8-uRK" firstAttribute="trailing" secondItem="WCY-iP-WJj" secondAttribute="trailing" constant="10" id="aHe-5t-wST"/>
+                            <constraint firstItem="lvd-T8-uRK" firstAttribute="trailing" secondItem="GOR-0O-k3N" secondAttribute="trailing" constant="10" id="f6V-el-eM9"/>
+                            <constraint firstItem="WCY-iP-WJj" firstAttribute="top" secondItem="GOR-0O-k3N" secondAttribute="bottom" constant="119" id="z6y-Ce-dIC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="녹음" id="wWE-RX-9Tp"/>
+                    <connections>
+                        <outlet property="playBtn" destination="hDl-33-EU5" id="ubZ-hW-oIM"/>
+                        <outlet property="recordBtn" destination="9x7-jO-Inh" id="cUH-Yd-umA"/>
+                        <outlet property="saveFile" destination="MDb-3Z-4d8" id="CRy-4o-fZv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIi-C3-mB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="1588"/>
+            <point key="canvasLocation" x="137.68115942028987" y="1587.7232142857142"/>
         </scene>
         <!--계정-->
         <scene sceneID="6t3-Aw-gie">
@@ -259,6 +321,9 @@
         <image name="flag.fill" catalog="system" width="128" height="121"/>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="hoho" width="390.5" height="444.5"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="record.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
