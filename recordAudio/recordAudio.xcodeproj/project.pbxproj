@@ -246,12 +246,12 @@
 		D8B19B1127E9849D007436A7 /* 녹음 */ = {
 			isa = PBXGroup;
 			children = (
+				D8D168B127F41A0300832BCA /* RecordingVC.swift */,
 				D8D168AA27F3F0EB00832BCA /* type */,
 				D8D1689427F3EC5E00832BCA /* display */,
 				D8D168A127F3EED600832BCA /* errorMange */,
 				D8D168AF27F41A0300832BCA /* ARFileManager.swift */,
 				D8D168B027F41A0300832BCA /* AudioService.swift */,
-				D8D168B127F41A0300832BCA /* RecordingVC.swift */,
 				D8D168B527F4385F00832BCA /* SaveAudioFile.swift */,
 			);
 			name = "녹음";

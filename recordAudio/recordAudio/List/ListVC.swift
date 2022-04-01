@@ -7,6 +7,7 @@
 
 
 import UIKit
+import AVFAudio
 
 class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -59,8 +60,10 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    
-    
+    // 가공 오디오 파일 -> FNList
+    func convertWave(){
+        
+    }
     
     
     
@@ -82,9 +85,15 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataLoad()
-        self.tableView.reloadData()
+        
+        // RecordingVC audioFile path
+        print(self.WavPath)
+        self.FNList = self.WavPath.map{ $0.deletingLastPathComponent().lastPathComponent }
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.reloadData()
+        
         
     }
     
