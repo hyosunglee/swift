@@ -10,7 +10,7 @@ import CoreData
 
 class RecordingVC: UIViewController {
     
-    private let audioService = AudioService(nil)
+    let audioService = AudioService(nil)
     
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
@@ -93,7 +93,13 @@ class RecordingVC: UIViewController {
             memoryPath.append(contentsOf: wavFile)
             
             // 리스트로 보냄 계정 대신 데이터 경로
+            print(wavFile)
             ListVC().WavPath = wavFile
+            ListVC().FNList = wavFiles
+            print("=================")
+            print(ListVC().WavPath)
+            print(ListVC().FNList)
+            
             
         } catch {
             print(error)
@@ -142,7 +148,8 @@ class RecordingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var a = ListVC().FNList
+        print(a)
         
     }
     

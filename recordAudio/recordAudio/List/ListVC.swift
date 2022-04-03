@@ -61,8 +61,50 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     // 가공 오디오 파일 -> FNList
-    func convertWave(){
-        
+    func loadFile(){
+        do {
+            // Get the document directory url
+            let documentDirectory = try FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: true
+            )
+            print("documentDirectory", documentDirectory.path)
+            // Get the directory contents urls (including subfolders urls)
+            let directoryContents = try FileManager.default.contentsOfDirectory(
+                at: documentDirectory,
+                includingPropertiesForKeys: nil
+            )
+            print("directoryContents:", directoryContents.map { $0.localizedName ?? $0.lastPathComponent })
+            for url in directoryContents {
+                print(url.localizedName ?? url.lastPathComponent)
+            }
+            
+            print("=================")
+            // if you would like to hide the file extension
+            for var url in directoryContents {
+                url.hasHiddenExtension = true
+                
+            }
+            for url in directoryContents {
+                self.WavPath.append(url)
+                print(url.localizedName ?? url.lastPathComponent)
+            }
+            
+            
+            print("=================")
+
+            // if you want to get all mp3 files located at the documents directory:
+            let wavss = directoryContents.filter(\.iswav).map { $0.localizedName ?? $0.lastPathComponent }
+            print("waves:", wavss)
+            
+            
+            
+            
+        } catch {
+            print(error)
+        }
     }
     
     
@@ -85,6 +127,7 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataLoad()
+        loadFile()
         
         // RecordingVC audioFile path
         print(self.WavPath)
@@ -100,9 +143,24 @@ class ListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     
+    
+    
 }
 // tableView
 
 // load F.M.
 
 
+extension URL {
+    var typeIdentifier: String? { (try? resourceValues(forKeys: [.typeIdentifierKey]))?.typeIdentifier }
+    var iswav: Bool { typeIdentifier == "public.wav" }
+    var localizedName: String? { (try? resourceValues(forKeys: [.localizedNameKey]))?.localizedName }
+    var hasHiddenExtension: Bool {
+        get { (try? resourceValues(forKeys: [.hasHiddenExtensionKey]))?.hasHiddenExtension == true }
+        set {
+            var resourceValues = URLResourceValues()
+            resourceValues.hasHiddenExtension = newValue
+            try? setResourceValues(resourceValues)
+        }
+    }
+}
