@@ -1,0 +1,22 @@
+func solution_1(_ num_list:[Int], _ n:Int) -> Int {
+        
+        num_list.map {
+            if $0 == n {
+                return 1
+            } else {
+                return 0
+            }
+        }
+        return 0
+    
+}
+    
+    
+func solution_1_1(_ num_list:[Int], _ n:Int) -> Int {
+        
+        if num_list.contains(n) == true {
+            return 1
+        }
+        return 0
+    
+}
