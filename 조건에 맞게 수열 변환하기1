@@ -1,0 +1,18 @@
+
+
+
+func solution(_ arr:[Int]) -> [Int] {
+        var answer: [Int] = []
+        arr.map {
+            // 50보다 크거나 같은 짝수
+            if $0 >= 50 && $0%2 == 0 {
+                answer.append($0/2)
+            // 50보다 작은 홀수, 2로 나누어 나머지가 0이면 짝수 1이면 홀수
+            } else if $0 < 50 && $0%2 != 0 {
+                answer.append($0*2)
+            } else {
+                answer.append($0)
+            }
+        }
+        return answer    
+}
