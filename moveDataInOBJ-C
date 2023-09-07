@@ -1,0 +1,14 @@
+
+
+
+Assigning to 'readonly' return result of an Objective-C message not allowed
+
+
+obj-c data -> swift (IN OBJ-C)
+ScanSwift.mov_r_type = resultType;
+ScanSwift.mov_r_data = resultData;
+ScanSwift.mov_r_image = resultImage;
+
+
+obj-c data <- swift (IN OBJ-C)
+resultType = ShareData.ResultCodeTypeWideQrCode;
