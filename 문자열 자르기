@@ -1,0 +1,16 @@
+func solution_3(_ my_string:String, _ n:Int) -> String {
+        // my_string[0] ~ my_string[n]
+        let start = my_string.index(my_string.startIndex, offsetBy: 0)
+        let end = my_string.index(my_string.startIndex, offsetBy: n-1)
+        
+        
+        return String(my_string[start...end])
+    
+}
+
+// 마지막 문자열 출력
+my_string[my_string.index(before: my_string.endIndex)]
+
+
+// 마지막 문자열 인덱스 
+my_string.index(before: my_string.endIndex)
