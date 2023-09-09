@@ -1,0 +1,5 @@
+func solution(_ n_str:String) -> Int {
+    return { Int(n_str) ?? 0 }()
+}
+
+! -> 강제 언래핑은 값이 없으면 터질 수 있음. 
