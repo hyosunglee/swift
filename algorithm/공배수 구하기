@@ -1,0 +1,8 @@
+func solution_sa(_ number:Int, _ n:Int, _ m:Int) -> Int {
+        
+        var answer = (number % n == 0 && number % m == 0 ) ? 1 : 0
+        if n == 0 || m == 0 {
+            answer = 0
+        }
+        return answer
+}
