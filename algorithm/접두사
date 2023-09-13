@@ -1,0 +1,20 @@
+func solution_pre(_ my_string:String, _ is_prefix:String) -> Int {
+        
+        // 접두사
+        // 앞 글자부터 하나씩
+        // 접두사 면 1 아니면 0
+        //
+        //
+        // 숫자 로 대입가능
+        // is_prefix 만 숫자로 만들면 됨.
+//        my_string.prefix(while: { $0 == is_prefix} )
+        if my_string.hasPrefix(is_prefix) {
+            
+            return 1
+            
+        } else {
+            
+            return 0
+        }
+    
+}
