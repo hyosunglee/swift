@@ -1,0 +1,11 @@
+func solution_replace(_ myString:String, _ pat:String) -> Int {
+    
+    // 1 myString -> A -> B && B -> A
+    // 변경된 인덱스만 뽑아서 재조합? 너무 복잡 다음
+    
+    // 2
+    let chage = myString.map { $0 == "A" ? "B" : "A" }
+    let ans = chage.joined(separator: ",").replacingOccurrences(of: ",", with: "")
+
+    return ans.contains(pat) ? 1 : 0
+}
