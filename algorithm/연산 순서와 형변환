@@ -1,0 +1,10 @@
+func solution(_ arr:[Int]) -> Double {
+    
+    var sum = arr.reduce(0, +)
+    // MARK: 1. 결과값이 int
+    return Double(sum/arr.count)
+    // MARK: 2. 결과값이 Double
+    return Double(sum) / Double(arr.count)
+}
+
+// 1번은 연산 후 Double 형변환을 한다. 결과값이 정수. 
