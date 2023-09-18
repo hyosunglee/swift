@@ -1,0 +1,8 @@
+    // % -> int
+    // truncatingRemainder -> double
+    // nan 무한대 처리방법
+    let d = 3.0
+    let isNan = d.isNaN // False
+
+    let d = Double.NaN
+    let isNan = d.isNaN // True
