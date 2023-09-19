@@ -1,0 +1,12 @@
+func solution_munga(_ s:String) -> String {
+    
+    // 단어 쪼개서 앞글자 어퍼케이스
+    var ans = String(s).split(separator: " ")
+    
+    var tae = ans.map { $0.prefix(1).description.uppercased() + $0.suffix($0.count-1).lowercased() }
+    
+    
+    return String(tae.reduce(String("")) { $0 + $1 + " " }.dropLast())
+}
+
+점수 44점 아오 맞을 줄 알았는데 
