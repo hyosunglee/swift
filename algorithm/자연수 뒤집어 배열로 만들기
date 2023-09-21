@@ -1,0 +1,8 @@
+func solution_reverse(_ n:Int64) -> [Int] {
+    var a = String(n).split(separator: "")
+    var b: [String] = a.map { String($0) }
+    print(b.reversed())
+    return []
+}
+
+solution_reverse(12345)
