@@ -1,0 +1,19 @@
+viewController.webView.evaluateJavaScript("document.getElementById('joinEmail').value") {
+                (result, error) in
+                if let result = result {
+                    print("email Login")
+                    print(result)
+                    
+                }
+            
+}
+            
+viewController.webView.evaluateJavaScript("document.getElementsByName('Email').value") {
+                (result, error) in
+                if let result = result {
+                    print("email Login")
+                    print(result)
+                    
+                }
+            
+}
