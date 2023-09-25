@@ -32,14 +32,17 @@ func solution_permutation(_ A:[Int], _ B:[Int]) -> Int
     }
     var a = permute(A, A.count)
     var b = permute(B, B.count)
+    var d = b.reversed()
+    
+    
     var c = zip(a, b).map { zip($0, $1).map(*) }
+    c = zip(a, d).map { zip($0, $1).map(*) }
+    print(c)
     // 각각의 원소들의 합
     var answer: [Int] = []
     for i in 0...c.count-1 { answer.append(c[i].reduce(0, +))  }
+    
     ans = answer.min()!
     print(ans)
     return ans
 }
-
-곱하는 경우의 수를 늘려야함. 
-순열로 뽑은 순서대로만 곱하면 그렇지 않은 경우의 수는 포함되지 않음. 그래도 zip 이란 메서드 
