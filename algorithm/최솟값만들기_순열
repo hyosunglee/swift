@@ -1,3 +1,5 @@
+순열로 접근하는 것은 모든 경우의 수를 다 따져보는 것이라 비효율 ► 최소공배수? 더 간단한 방법을 고려하기 
+
 func solution_permutation(_ A:[Int], _ B:[Int]) -> Int
 {
     var ans = 0
@@ -30,13 +32,14 @@ func solution_permutation(_ A:[Int], _ B:[Int]) -> Int
         print(result)
         return result
     }
-    var a = permute(A, A.count)
-    var b = permute(B, B.count)
-    var d = b.reversed()
+    let a = permute(A, A.count)
+    let b = permute(B, B.count)
+    let d = b.reversed()
     
     
     var c = zip(a, b).map { zip($0, $1).map(*) }
-    c = zip(a, d).map { zip($0, $1).map(*) }
+    print(c)
+    zip(a, d).map { c.append(zip($0, $1).map(*))  }
     print(c)
     // 각각의 원소들의 합
     var answer: [Int] = []
