@@ -1,0 +1,21 @@
+func solution_minMulity(_ A:[Int], _ B:[Int]) -> Int
+{
+    var ans = 0
+    
+    let a = A.sorted(by: >)
+    let b = B.sorted(by: <)
+    let d = b.reversed()
+    
+    
+    var c = zip(a, b).map(*)
+    print(c)
+    
+    // 각각의 원소들의 합
+    var answer: [Int] = []
+    answer.append(c.reduce(0, +))
+    
+    
+    ans = answer.min()!
+    print(ans)
+    return ans
+}
