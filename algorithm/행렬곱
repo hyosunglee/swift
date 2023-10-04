@@ -23,7 +23,10 @@ func solution_xy(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
         var L: [Int] = []
         for i in 0...arr2[0].count - 1 {
             var sum = 0
-            
+
+// Enumerated()란... 애플 문서를 뒤져보면 (n, x)로 이루어진 쌍을 리턴한다고 합니다. (튜플 형태로 리턴하는 것 같군요)
+// 여기서 n은 0부터 x까지의 연속적 숫자를 뜻하고 x는 해당 순서의 요소라고 하네요.
+
             for (j, n) in arr.enumerated() {
                 sum += n * arr2[j][i]
             }
