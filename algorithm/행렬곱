@@ -1,0 +1,38 @@
+// 쥐어짜낸 로직 
+
+    var ans: [[Int]] = arr2
+    
+    for i in 0...arr2.count - 1 {
+        for j in 0...arr2.count - 1 {
+            ans[i][j] = arr2[j][i]
+            
+        }
+    }
+    
+    
+    var c = zip(arr1, ans).map { zip($0, $1).map(*) }
+    
+    
+    return c
+
+// 음...
+func solution_xy(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
+    var ans = [[Int]]()
+    var arr: [Int] = []
+    for arr in arr1 {
+        var L: [Int] = []
+        for i in 0...arr2[0].count - 1 {
+            var sum = 0
+            
+            for (j, n) in arr.enumerated() {
+                sum += n * arr2[j][i]
+            }
+            
+            L.append(sum)
+        }
+        ans.append(L)
+        
+    }
+    return ans
+}
+
