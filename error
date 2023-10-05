@@ -1,1 +1,7 @@
 
+[Presentation] Attempt to present 
+
+► 
+DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            // 뷰 전환 코드         
+}
