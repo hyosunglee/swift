@@ -1,15 +1,15 @@
 
 
 aboutMe
-▶️ 빌드세팅
+▶️ arm64, x86_64 buildSetting - EXCLUDED_ARCHS
 ▶️ pod - spm 처리
 ▶️ app in app 구조  - .a (static Library) 처리
 
 hurom & masa
-
+▶️
 
 cop
-
+▶️ swiftUI ↔︎ swift ↔︎ obj-c ↔︎ lib(c & c++)
 
 
 
