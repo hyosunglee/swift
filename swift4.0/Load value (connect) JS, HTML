@@ -17,3 +17,15 @@ viewController.webView.evaluateJavaScript("document.getElementsByName('Email').v
                 }
             
 }
+
+// getElementsByClassName
+func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    web.evaluateJavaScript("document.getElementsByClassName('excerpt')[0].innerText") {(result, error) in
+        guard error == nil {
+            print(error!)
+            return
+        }
+
+        print(String(describing: result))
+    }
+}
