@@ -9,7 +9,6 @@ viewController.webView.evaluateJavaScript("document.getElementById('joinEmail').
             
 }
 
-   ![Uploading 스크린샷 2023-10-11 오후 2.55.06.png…]()
 
 
 viewController.webView.evaluateJavaScript("document.getElementsByName('Email').value") {
