@@ -11,3 +11,5 @@
 예시. 
 stackViewHeight.constant = 303
 innerStackVheight.constant = 236
+
+그리고 다시 카테고리가 지워지면 높이를 원래상태로 돌려야 한다. 
