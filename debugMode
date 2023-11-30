@@ -1,1 +1,17 @@
 
+
+
+
+important thing is Location 
+
+AppDelegate global func 
+
+
+public func print(_ items: Any...) {
+#if DEBUG
+    Swift.print(items)
+    // append items to your file here
+#else
+    Swift.print("Release")
+#endif
+}
