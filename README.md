@@ -15,7 +15,7 @@ https://raw.githubusercontent.com/godrm/mobile-developer-roadmap/master/Images/i
 swiftUI
 https://iosexample.com/tag/swiftui/
 
-https://www.tutorialspoint.com/swift/swift_arc_overview.html
+[https://www.tutorialspoint.com/swift/swift_arc_overview.html](https://www.tutorialspoint.com/swift/index.htm)
 
 twitter
 
