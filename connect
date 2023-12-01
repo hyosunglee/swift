@@ -1,0 +1,3 @@
+ViewController (storyboard) - hostingVC - ContentView(swiftUI) - ScanView - ScanHandler - ScanViewController(storyboard) 
+
+decodeImage (obj-c) - ScanControlObj (스캔 연산 obj-c) - can use lib c & c++
