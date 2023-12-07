@@ -1,0 +1,11 @@
+
+
+dictionary
+
+save
+var saveSerialtoId = [Int : String]
+UserDefaults.standard.set(saveSerialtoId, forKey: "SerialToId")
+
+load
+var saveSerialtoId = UserDefaults.standard.string(forKey: "SerialToId") as? [Int : String]
+guard let DkuSerialNo = saveSerialtoId?[vehicleId] else { return }
