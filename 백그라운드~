@@ -1,0 +1,13 @@
+BGTaskSchedulerPermittedIdentifiers
+
+앱이 백그라운드에서 작업을 수행할 수 있게 시스템에게 요청하는 걸 도와주는 프레임워크
+간단한 서버 호출 > 리프레쉬 작업부터, 에너지를 많이 사용하고 네트워크 연결을 요구하는 작업도 요청가능
+
+
+
+
+
+
+
+출처: https://lemon-dev.tistory.com/entry/iOS-BackgroundTask-Framework-간단-정리 [lemon_dev:티스토리]
+
