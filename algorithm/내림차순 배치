@@ -1,0 +1,14 @@
+func solution(_ n:Int64) -> Int64 {
+        var change = String(n)
+        var string2 = change.map { String($0) }
+        
+//        let ans :[Int] = string2.map { Int($0) ?? 0 }
+            
+        string2 = string2.sorted(by: >)
+        var ans = ""
+        for i in 0...string2.count - 1 {
+             ans += string2[i]
+        }
+        print(Int64(ans) ?? 0)
+        return Int64(ans) ?? 0
+    }
