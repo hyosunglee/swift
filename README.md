@@ -21,4 +21,5 @@ twitter
 
 rudrankriyam , steipete , twostraws , makwanbk , jamesthomson , joemasilotti , nicklockwood , eneko .
 
+https://cs193p.sites.stanford.edu/about-cs193p
 
