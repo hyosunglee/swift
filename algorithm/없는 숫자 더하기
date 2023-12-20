@@ -1,0 +1,6 @@
+   func solution_9(_ numbers:[Int]) -> Int {
+        
+        let ans = 45 - numbers.reduce(0, +)
+        print(ans)
+        return ans
+    }
