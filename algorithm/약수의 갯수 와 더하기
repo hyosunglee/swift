@@ -1,0 +1,24 @@
+// 제곱근에 소수점이 없으면 약수의 갯수가 홀수고 있으면 짝수입니다.
+
+func solution(_ left:Int, _ right:Int) -> Int {
+        
+        var ans = 0
+        for i in left...right {
+            if floor(sqrt(Double(i))) == sqrt(Double(i)) {
+                ans -= i
+            } else {
+                ans += i
+            }
+            
+        }
+        print(ans)
+        return ans
+    
+}
+
+ceil(값) = 소수점 올림
+floor(값) = 소수점 내림
+trunc(값) = 소수점 버림
+round(값) = 소수점 반올림
+[출처] [swift] 소수점 다루기 (ceil, floor, trunc, round) + 절댓값(abs)|작성자 지니찡찡
+
