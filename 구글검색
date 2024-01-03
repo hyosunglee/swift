@@ -1,0 +1,7 @@
+var query: String = "네이버"
+            
+            
+let escapedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            
+            
+let test = "https://www.google.com/search?q=\(escapedQuery ?? "")"
