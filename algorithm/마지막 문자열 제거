@@ -1,0 +1,6 @@
+
+
+var ans = "TrY HeLlO WoRlD!"
+ans.remove(at: ans.index(before: ans.endIndex))
+
+// TrY HeLlO WoRlD
