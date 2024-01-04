@@ -1,0 +1,19 @@
+
+len = 3
+
+i  🚩 🚩 🚩 
+0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣
+
+len - 1
+
+i  🚩 🚩
+0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣
+
+🟢   🟢 
+0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣ 0️⃣
+
+ragne 
+
+let startIndex = t.index(t.startIndex, offsetBy: i)
+let endIndex = t.index(t.startIndex, offsetBy: i+len-1)            
+let range = startIndex...endIndex
