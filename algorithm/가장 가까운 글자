@@ -1,0 +1,12 @@
+var isExist = false // 같은 글자가 존재하는지
+        
+        // 하나씩 앞으로 가며 검사
+        while (index > 0) {
+            ⭐️index -= 1⭐
+            
+            if elements[index] == elements[i] {
+                answer.append(i - index) // 현재 인덱스 - 검사 인덱스 = 몇번째 앞인지
+                isExist = true
+                break
+            }
+        }
