@@ -1,13 +1,18 @@
 
-
+@objcMembers
+class ETC: NSObject {
+    
+    static var mov_r_type: String = ""
+    
+}
 
 Assigning to 'readonly' return result of an Objective-C message not allowed
 
 
 obj-c data -> swift (IN OBJ-C)
-ScanSwift.mov_r_type = resultType;
-ScanSwift.mov_r_data = resultData;
-ScanSwift.mov_r_image = resultImage;
+ETC.mov_r_type = resultType;
+ETC.mov_r_data = resultData;
+ETC.mov_r_image = resultImage;
 
 
 obj-c data <- swift (IN OBJ-C)
