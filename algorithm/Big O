@@ -1,7 +1,7 @@
 
-Linear Time ↗️
+Linear Time ↗️ O(n)
 
-constant Time ➔
+constant Time ➔ O(1)
 
 
-이진검색 - 반띵 반띵 ~ ~ ~ 
+이진검색 - 반띵 반띵 ~ ~ ~ O(log n)
