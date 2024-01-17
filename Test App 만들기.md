@@ -6,7 +6,8 @@
 <img width="446" alt="스크린샷 2024-01-17 오후 4 07 20" src="https://github.com/hyosunglee/swift/assets/24516775/44f14f91-4bcf-4a5f-af90-99456bf2e1ac">
 
 5. 스토어에 앱 이름 변경 (상표명?)
-   <img width="440" alt="스크린샷 2024-01-17 오후 4 15 16" src="https://github.com/hyosunglee/swift/assets/24516775/6a5df106-4614-4c63-8a60-fe30fe3ba203">
+
+<img width="440" alt="스크린샷 2024-01-17 오후 4 15 16" src="https://github.com/hyosunglee/swift/assets/24516775/6a5df106-4614-4c63-8a60-fe30fe3ba203">
 
 
 
