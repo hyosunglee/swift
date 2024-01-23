@@ -1,0 +1,4 @@
+viewDidLoad 메서드에서 이 줄을 제거하세요.
+
+collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: "CollectionCell")
+프로그래밍 방식으로 생성된 컬렉션 뷰 셀을 컬렉션 뷰에 등록하는 데 사용됩니다. 스토리보드에 모든 것이 있을 때 이 방법을 사용하면 IBOutlet이 nil인 셀이 생성됩니다.
