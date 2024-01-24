@@ -1,0 +1,13 @@
+알림센터 내릴 때
+sceneWillResignActive
+sceneDidBecomeActive
+sceneWillResignActive
+
+알림센터 올릴 때
+sceneDidBecomeActive
+
+App Switcher로 갈 때
+sceneWillResignActive
+
+다시 앱으로 돌아올 때
+sceneDidBecomeActive
