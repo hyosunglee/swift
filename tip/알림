@@ -1,3 +1,24 @@
+로컬 알림을 작성하는 방법
+알림을 보내려면 UNNotificationRequest라는 객체를 작성하고, 이를 알림 센터에 추가해줘야 한다.
+
+이 알림 요청서에는 3가지 요소가 있는데, 이를 customizing하여 원하는 알림을 만들 수 있다.
+identifier : 고유한 값인 UUID를 입력하는 것이 일반적이다.
+Content(UNMutableNotifciationContent) : 알림에 나타날 내용, 타이틀, 소리, 뱃지의 내용을 String으로 입력할 수 있다.
+Trigger(UNNotificationTrigger) : 센터에 등록된 알림이 어떤 시점에 trigger될 지에 대한 정보이다. Trigger는 정해진 시각 / 특정 시간 간격 / 위치에 대한 정보를 가지는 세 종류로 나뉜다.
+
+UNCalendarNotifcationTrigger : 정해진 시각에 대한 알림은 Date 객체를 통해서 지정해줄 수 있다.
+UNTimeIntervalNotificationTrigger : 타이머라고 생각하면 된다. 특정 시간 간격 이후에 알림을 띄운다.
+UNLocationNotificationTrigger : 특정 위치 정보를 기반으로 알림을 띄울 수 있다.
+UNPushNotifcationTrigger : 로컬 알림에서는 쓰이지 않는다. APNs를 통한 remote notification에서 사용하면 된다.
+정리하면, 로컬 알림은 미리 내용과 전달 시점 또는 조건이 정해진 알림을 센터에 등록해 놓고, 정해진 시각, 특정 시간 간격, 위치의 조건에 맞을 때 사용자에게 알림을 전달하는 기능이다.
+
+위의 정보를 담은 request를 만든 다음에, 이를 UNNotifcationCenter에 add해주면 trigger 조건에 따라 사용자에게 알림이 전달된다.
+
+
+
+출처: https://jazz-the-it.tistory.com/37
+
+
 알림센터 내릴 때
 sceneWillResignActive
 sceneDidBecomeActive
