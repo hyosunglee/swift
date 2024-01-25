@@ -1,0 +1,6 @@
+https://green1229.tistory.com/m/441
+
+
+guard let childVC = self.storyboard?.instantiateViewController(withIdentifier: "ChildViewController") as? ChildViewController else { return }
+    
+childVC.titleText = "GREEN"
