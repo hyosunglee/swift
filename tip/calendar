@@ -1,0 +1,28 @@
+    static func dayFormmat() -> Int {
+        let cal = Calendar(identifier: .gregorian)
+        let now = Date()
+        let comps = cal.dateComponents([.weekday], from: now)
+        return comps.weekday ?? 0
+    }
+    
+    static func yoilFormmat(number:Int) -> String {
+
+        var week = "";
+        
+        if(number==1){
+            week = "일";
+        }else if(number==2){
+            week = "월";
+        }else if(number==3){
+            week = "화";
+        }else if(number==4){
+            week = "수";
+        }else if(number==5){
+            week = "목";
+        }else if(number==6){
+            week = "금";
+        }else{
+            week = "토";
+        }
+        return week;
+    }
