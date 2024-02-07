@@ -1,0 +1,29 @@
+    func initGesture() {
+//        gestureView.backgroundColor = UIColor.blue
+//        self.view.addSubview(gestureView)
+        let swipeGestureR = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeGestureR.direction = .right
+        gestureView.addGestureRecognizer(swipeGestureR)
+        
+        let swipeGestureL = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeGestureL.direction = .left
+        gestureView.addGestureRecognizer(swipeGestureL)
+        
+    }
+    
+    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case .right:
+            print("Swiped Right!")
+        case .left:
+            print("Swiped left!")
+        case .up:
+            print("Swiped up!")
+        case .down:
+            print("Swiped down!")
+        default:
+            print("default")
+        }
+        
+        
+    }
