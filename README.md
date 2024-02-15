@@ -15,7 +15,6 @@ https://raw.githubusercontent.com/godrm/mobile-developer-roadmap/master/Images/i
 [https://www.tutorialspoint.com/swift/swift_arc_overview.html](https://www.tutorialspoint.com/swift/index.htm)
 
 twitter
-
 rudrankriyam , steipete , twostraws , makwanbk , jamesthomson , joemasilotti , nicklockwood , eneko.
 
 https://cs193p.sites.stanford.edu/about-cs193p
