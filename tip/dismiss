@@ -1,0 +1,5 @@
+PresentedViewController : 자신이 호출한 ViewController
+PresentingViewController : 자신을 호출한 ViewController
+
+
+dismiss(animated: true, completion: nil)
