@@ -1,0 +1,39 @@
+안쪽 테두리 
+switch (edge) {
+            case UIRectEdgeTop:
+                border.frame = CGRectMake(0, 0, self.frame.size.width, adjustedWidth);
+                break;
+            case UIRectEdgeBottom:
+                border.frame = CGRectMake(0, self.frame.size.height - adjustedWidth, self.frame.size.width, adjustedWidth);
+                break;
+            case UIRectEdgeLeft:
+                border.frame = CGRectMake(0, 0, adjustedWidth, self.frame.size.height);
+                break;
+            case UIRectEdgeRight:
+                border.frame = CGRectMake(self.frame.size.width - adjustedWidth, 0, adjustedWidth, self.frame.size.height);
+                break;
+            default:
+                break;
+        }
+바깥쪽 테두리 
+
+switch (edge) {
+    case UIRectEdgeTop:
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y - width, self.frame.size.width, self.frame.size.height + width);
+        break;
+    case UIRectEdgeBottom:
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height + width);
+        break;
+    case UIRectEdgeLeft:
+        self.frame = CGRectMake(self.frame.origin.x - width, self.frame.origin.y, self.frame.size.width + width, self.frame.size.height);
+        break;
+    case UIRectEdgeRight:
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width + width, self.frame.size.height);
+        break;
+    default:
+        break;
+}
+
+
+border.frame = self.bounds;
+
