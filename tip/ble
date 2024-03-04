@@ -1,0 +1,76 @@
+// 이전코드 
+
+let bleManager = BLEManager()
+        
+        bleManager.startScanning()
+        var uuids: [String]?
+        var repeatCount = 0
+        
+        
+        repeatCount += 1
+        
+        // Set a condition to stop repeating (e.g., repeat 5 times)
+        if repeatCount < 333 {
+            // Call the function again after a delay
+            bleManager.minewBeaconManager(bleManager.beaconManager, didUpdate: .powerOn)
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.2) {
+                bleManager.minewBeaconManager(bleManager.beaconManager, appear: bleManager.scannedBeacons)
+                bleManager.minewBeaconManager(bleManager.beaconManager, didRangeBeacons: bleManager.scannedBeacons)
+                bleManager.minewBeaconManager(bleManager.beaconManager, didUpdate: .powerOn)
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    
+                    bleManager.beaconConnection(bleManager.connection, didChange: .connected, appear: bleManager.scannedBeacons)
+                }
+                
+                
+                uuids = bleManager.beaconUUID
+                
+                print("beacon count - ", bleManager.scannedBeacons.count)
+                print("???")
+                print(uuids)
+                
+            }
+        }
+
+
+// 변경코드
+
+let bleManager = BLEManager()
+
+func performBLEOperations(completion: @escaping () -> Void) {
+    bleManager.startScanning()
+
+    // Set a condition to stop repeating (e.g., when desired results are obtained)
+    if bleManager.scannedBeacons.count < desiredBeaconCount {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.2) {
+            // Your BLE operations go here
+            bleManager.minewBeaconManager(bleManager.beaconManager, didUpdate: .powerOn)
+            bleManager.minewBeaconManager(bleManager.beaconManager, appear: bleManager.scannedBeacons)
+            bleManager.minewBeaconManager(bleManager.beaconManager, didRangeBeacons: bleManager.scannedBeacons)
+            bleManager.minewBeaconManager(bleManager.beaconManager, didUpdate: .powerOn)
+
+            DispatchQueue.global(qos: .userInitiated).async {
+                bleManager.beaconConnection(bleManager.connection, didChange: .connected, appear: bleManager.scannedBeacons)
+            }
+
+            // Check if the desired results are obtained
+            if bleManager.scannedBeacons.count >= desiredBeaconCount {
+                completion()
+            } else {
+                // If not, recursively call the function again
+                self.performBLEOperations(completion: completion)
+            }
+        }
+    } else {
+        completion()
+    }
+}
+
+// Call the function
+performBLEOperations {
+    // This block will be executed when the desired results are obtained
+    let uuids = bleManager.beaconUUID
+    print("Beacon count - ", bleManager.scannedBeacons.count)
+    print(uuids)
+}
