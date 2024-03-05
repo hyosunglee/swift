@@ -115,7 +115,8 @@ func performBLEOperations(completion: @escaping () -> Void) {
     }
 
 
-// 최종 코드 검증중
+// 최종 코드 검증중 여기서 메인으로 바꿔야할 코드가 있음. 
+// 메인쓰레드의 파워를 느낌;;
 func performBLEOperations(completion: @escaping () -> Void) {
         
         bleManager.startScanning()
