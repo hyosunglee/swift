@@ -114,3 +114,36 @@ func performBLEOperations(completion: @escaping () -> Void) {
         }
     }
 
+
+// 최종 코드 검증중
+func performBLEOperations(completion: @escaping () -> Void) {
+        
+        bleManager.startScanning()
+
+        // Set a condition to stop repeating (e.g., when desired results are obtained)
+        
+        
+        if bleManager.scannedBeacons?.count ?? 0 < 1 {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.2) {
+                // Your BLE operations go here
+                self.bleManager.minewBeaconManager(self.bleManager.beaconManager ?? MinewBeaconManager(), didUpdate: .powerOn)
+                self.bleManager.minewBeaconManager(self.bleManager.beaconManager ?? MinewBeaconManager(), appear: self.bleManager.scannedBeacons ?? [])
+                self.bleManager.minewBeaconManager(self.bleManager.beaconManager ?? MinewBeaconManager(), didRangeBeacons: self.bleManager.scannedBeacons ?? [])
+                self.bleManager.minewBeaconManager( self.bleManager.beaconManager ?? MinewBeaconManager(), didUpdate: .powerOn)
+                
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.bleManager.beaconConnection( self.bleManager.connection, didChange: .connected, appear: self.bleManager.scannedBeacons ?? [])
+                }
+                
+                // Check if the desired results are obtained
+                if self.bleManager.scannedBeacons?.count ?? 0 >= 2 {
+                    completion()
+                } else {
+                    // If not, recursively call the function again
+                    self.performBLEOperations(completion: completion)
+                }
+            }
+        } else {
+            completion()
+        }
+    }
