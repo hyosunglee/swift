@@ -1,0 +1,32 @@
+
+
+// 원본 
+
+if (self.bleManager.scannedBeacons.count < 1) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+            // Your BLE operations go here
+            [self.bleManager minewBeaconManager:self.bleManager.beaconManager?: [MinewBeaconManager new] didUpdateState:BluetoothStatePowerOn];
+            [self.bleManager minewBeaconManager:self.bleManager.beaconManager?: [MinewBeaconManager new] appearBeacons:self.bleManager.scannedBeacons?: @[]];
+            [self.bleManager minewBeaconManager:self.bleManager.beaconManager?: [MinewBeaconManager new] didRangeBeacons:self.bleManager.scannedBeacons?: @[]];
+            [self.bleManager minewBeaconManager:self.bleManager.beaconManager?: [MinewBeaconManager new] didUpdateState:BluetoothStatePowerOn];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.bleManager beaconConnection:self.bleManager.connection didChange:ConnectionStateConnected appear:self.bleManager.scannedBeacons?: @[]];
+            });
+
+
+            // Check if the desired results are obtained
+            if (self.bleManager.scannedBeacons.count >= 1) {
+                completion();
+            } else {
+                // If not, recursively call the function again
+                [self performBLEOperationsWithCompletion:completion];
+            }
+        });
+    } else {
+        completion();
+    }
+
+
+
+// 수정본 
