@@ -136,7 +136,7 @@ func performBLEOperations(completion: @escaping () -> Void) {
                 }
                 
                 // Check if the desired results are obtained
-                if self.bleManager.scannedBeacons?.count ?? 0 >= 2 {
+                if self.bleManager.scannedBeacons?.count ?? 0 >= 1 {
                     completion()
                 } else {
                     // If not, recursively call the function again
