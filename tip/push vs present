@@ -1,0 +1,12 @@
+
+push 
+- 스택에 뷰를 쌓는 형태로 화면 업데이트 
+- 왼 ➡️ 오 
+[self.navigationController pushViewController:eventViewController animated:YES];
+
+present
+- modalPresentaionStyle 로 화면전환 스타일 고를 수 있음.
+- 아래 ➡️ 위
+[self presentViewController:alert animated:YES completion:nil];
+
+
