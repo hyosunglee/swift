@@ -19,22 +19,24 @@ struct MindMapView: View {
         "체력": ["지구력 훈련", "균형 잡힌 식단", "충분한 수면", "스트레스 관리"]
     ]
     
+    @State private var appearAnimation: Bool = false
+    
     @State private var editingNode: String?
     @State private var newNodeText: String = ""
-    @State private var selectedStat: String = "힘"
+    @State private var selectedStat: String = ""
     
     var body: some View {
         
         
         VStack {
             // 마인드맵 루트 노드 (stat 선택)
-            Picker("카테고리", selection: $selectedStat) {
-                ForEach(Array(mindMapData.keys), id: \.self) { key in
-                    Text(key).tag(key)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
+//            Picker("카테고리", selection: $selectedStat) {
+//                ForEach(Array(mindMapData.keys), id: \.self) { key in
+//                    Text(key).tag(key)
+//                }
+//            }
+//            .pickerStyle(SegmentedPickerStyle())
+//            .padding()
             
             Text("\(selectedStat) 향상을 위한 마인드맵")
                 .font(.headline)
@@ -61,12 +63,17 @@ struct MindMapView: View {
                                     .padding(8)
                             )
                             .position(x: centerX + xOffset, y: centerY + yOffset)
+                            .scaleEffect(appearAnimation ? 1 : 0)  // 애니메이션 효과 적용
+                            .animation(.easeOut(duration: 0.5).delay(Double(index) * 0.1), value: appearAnimation) // 각 원이 시간차를 두고 애니메이션
+                        
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.white)
                 .border(Color.gray)
-                
+                .onAppear {
+                    appearAnimation = true  // 뷰가 나타날 때 애니메이션 실행
+                }
                 
             }
             

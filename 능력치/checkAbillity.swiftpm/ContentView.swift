@@ -76,8 +76,7 @@ struct ContentView: View {
     let maxValue: Double = 100
     
     var body: some View {
-        MindMapView(stat: selectedStat)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+        
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
