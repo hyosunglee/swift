@@ -28,4 +28,8 @@ https://www.pointfree.co/collections
 https://choijaegwon.github.io/iosinterview/IOS/
 https://github.com/JeaSungLEE/iOSInterviewquestions
 
-swiftUI 로 개발 중이라면 맥 OS에서 빌드는 가능 하지만 일부 다른 동작이 필요해 보임. 뒤로가기 등 
+swiftUI 로 개발 중이라면 맥 OS에서 빌드는 가능 하지만 일부 다른 동작이 필요해 보임. 뒤로가기 등 + appkit
+
+
+concurrency
+https://developer.apple.com/videos/play/wwdc2021/10132/
