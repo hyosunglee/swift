@@ -212,4 +212,3 @@ Swift Concurrency는 비동기 코드의 안정성과 가독성을 높이는 강
 	•	MainActor → UI 업데이트를 안전하게 실행
 
 Swift Concurrency를 직접 실습하면서 기존의 completion handler 기반 코드와 비교해보는 것이 가장 효과적인 학습 방법입니다.
-이제 위 실습을 직접 실행해 보면서 익숙해지는 시간을 가져보세요!
