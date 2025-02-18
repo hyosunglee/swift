@@ -1,0 +1,21 @@
+이미지에 나와 있는 주요 기술 스택을 하나씩 설명해 줄게.
+
+1. Multi-module App, Micro Feature Architecture
+	•	Multi-module App: 앱을 여러 개의 모듈로 나누어 관리하는 방식. 모듈별로 독립적인 개발과 배포가 가능해 유지보수성이 좋아짐.
+	•	Micro Feature Architecture: 마이크로 서비스 아키텍처의 개념을 모바일 앱 개발에 적용한 것. 기능 단위로 독립적인 모듈을 구성해 확장성과 재사용성을 높임.
+
+2. Swift Concurrency, RxSwift, Combine
+	•	Swift Concurrency: Swift의 비동기 처리 기능(Async/Await, Task, Actor 등)을 활용해 멀티스레딩 작업을 안전하고 효율적으로 수행하는 기술.
+	•	RxSwift: 리액티브 프로그래밍을 적용한 iOS 개발 라이브러리. 데이터 스트림을 활용해 비동기 작업을 선언형으로 처리할 수 있음.
+	•	Combine: 애플이 제공하는 공식 리액티브 프로그래밍 프레임워크. RxSwift와 비슷하지만 Swift에 최적화되어 있고, Apple의 API와 자연스럽게 통합됨.
+
+3. Clean Architecture, MVVM, AutoLayout
+	•	Clean Architecture: 비즈니스 로직, 데이터, UI를 분리해 의존성을 최소화하는 설계 패턴. 유지보수성과 테스트 용이성이 높아짐.
+	•	MVVM (Model-View-ViewModel): UI(View)와 비즈니스 로직(Model)을 ViewModel을 통해 분리하는 아키텍처 패턴. UI 코드의 복잡도를 낮추고 테스트하기 쉽게 만들어줌.
+	•	AutoLayout: iOS UI를 동적으로 배치하는 기술. 다양한 화면 크기에 대응할 수 있도록 제약 조건을 활용해 레이아웃을 구성함.
+
+4. Fastlane, Tuist, SPM, Github Action
+	•	Fastlane: iOS 앱의 빌드, 테스트, 배포 과정을 자동화하는 도구. 앱스토어 배포, 스크린샷 생성 등을 쉽게 할 수 있음.
+	•	Tuist: Xcode 프로젝트를 쉽게 관리하고 자동화할 수 있도록 도와주는 오픈소스 도구. 프로젝트 설정을 YAML로 관리할 수 있어 협업이 편리함.
+	•	SPM (Swift Package Manager): Swift에서 공식 지원하는 패키지 관리 도구. 의존성 관리 및 코드 모듈화를 쉽게 할 수 있음.
+	•	Github Action: CI/CD 파이프라인을 설정할 수 있는 GitHub의 자동화 도구. 코드 푸시 시 빌드, 테스트, 배포 등의 작업을 자동화할 수 있음.
