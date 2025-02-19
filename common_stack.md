@@ -1,4 +1,4 @@
-이미지에 나와 있는 주요 기술 스택을 하나씩 설명해 줄게.
+
 
 1. Multi-module App, Micro Feature Architecture
 	•	Multi-module App: 앱을 여러 개의 모듈로 나누어 관리하는 방식. 모듈별로 독립적인 개발과 배포가 가능해 유지보수성이 좋아짐.
