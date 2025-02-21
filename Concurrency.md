@@ -10,7 +10,7 @@ Swift Concurrency는 Swift 5.5부터 도입된 비동기 프로그래밍 모델�
 	•	기존 completion handler 방식보다 코드가 간결하고 가독성이 좋음.
 
 📌 예제
-
+```swift
 func fetchData() async -> String {
     return "Hello, Swift Concurrency!"
 }
@@ -19,26 +19,26 @@ Task {
     let result = await fetchData()
     print(result)
 }
-
+```
 ✅ Task
 	•	새로운 비동기 작업을 생성하는 방법.
 	•	Task { }를 사용하면 자동으로 비동기 환경에서 실행됨.
 	•	Task.sleep(_:)을 사용하여 일정 시간 대기할 수도 있음.
 
 📌 예제: Task 사용하기
-
+```swift
 Task {
     print("Start")
     try await Task.sleep(nanoseconds: 2_000_000_000) // 2초 대기
     print("End")
 }
-
+```
 ✅ TaskGroup
 	•	여러 개의 비동기 작업을 병렬 실행하는 기능.
 	•	withTaskGroup을 사용하여 여러 개의 비동기 작업을 동시에 실행할 수 있음.
 
 📌 예제: TaskGroup 사용하기
-
+```swift
 import Foundation
 
 func fetchMultipleData() async {
@@ -55,13 +55,13 @@ func fetchMultipleData() async {
 Task {
     await fetchMultipleData()
 }
-
+```
 ✅ actor
 	•	데이터 경쟁 문제(Data Race)를 방지하는 동시성 안전 타입.
 	•	actor 내부의 변수는 동시에 여러 스레드에서 접근할 수 없음.
 
 📌 예제: actor 사용하기
-
+```swift
 actor Counter {
     private var count = 0
 
@@ -80,13 +80,13 @@ Task {
     await counter.increment()
     print(await counter.getCount()) // 1
 }
-
+```
 ✅ MainActor
 	•	메인 스레드에서 실행되도록 보장하는 기능.
 	•	UI 업데이트가 필요한 작업을 @MainActor로 감싸서 안전하게 실행할 수 있음.
 
 📌 예제: MainActor 사용하기
-
+```swift
 import SwiftUI
 
 @MainActor
@@ -109,7 +109,7 @@ struct ContentView: View {
             }
     }
 }
-
+```
 2. 실습 과제
 
 📌 실습 1: async/await를 이용한 네트워크 요청
@@ -137,7 +137,7 @@ Task {
         print("Error: \(error)")
     }
 }
-
+```
 📌 실습 2: TaskGroup을 사용하여 병렬 요청 처리
 	1.	3개의 다른 API에서 데이터를 동시에 가져오고, 모든 결과를 출력하세요.
 	2.	withTaskGroup(of: String.self)을 사용하여 동시에 여러 작업을 실행하세요.
@@ -174,11 +174,11 @@ Task {
         }
     }
 }
-
+```
 📌 실습 3: actor를 이용한 데이터 동기화
 	1.	actor를 사용하여 스레드 안전한 카운터를 구현하세요.
 	2.	여러 개의 Task가 동시에 increment()를 실행하도록 해보세요.
-
+```swift
 actor SafeCounter {
     private var count = 0
 
@@ -199,7 +199,7 @@ Task {
     await counter.increment()
     print("Final Count: \(await counter.getCount())") // 3
 }
-
+```
 3. 결론
 
 Swift Concurrency는 비동기 코드의 안정성과 가독성을 높이는 강력한 기능입니다.
