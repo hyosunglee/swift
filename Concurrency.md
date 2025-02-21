@@ -115,7 +115,7 @@ struct ContentView: View {
 📌 실습 1: async/await를 이용한 네트워크 요청
 	1.	async/await를 사용하여 네트워크에서 JSON 데이터를 가져오는 코드를 작성하세요.
 	2.	Task {}를 활용하여 데이터를 비동기적으로 가져오고 출력하세요.
-
+```swift
 import Foundation
 
 struct User: Codable {
@@ -142,6 +142,7 @@ Task {
 	1.	3개의 다른 API에서 데이터를 동시에 가져오고, 모든 결과를 출력하세요.
 	2.	withTaskGroup(of: String.self)을 사용하여 동시에 여러 작업을 실행하세요.
 
+```swift
 import Foundation
 
 func fetchData(from url: String) async -> String {
