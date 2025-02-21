@@ -10,7 +10,7 @@ Swift Concurrency는 Swift 5.5부터 도입된 비동기 프로그래밍 모델�
 	•	기존 completion handler 방식보다 코드가 간결하고 가독성이 좋음.
 
 📌 예제
-```swift
+₩``swift
 func fetchData() async -> String {
     return "Hello, Swift Concurrency!"
 }
