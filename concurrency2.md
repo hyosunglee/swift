@@ -9,7 +9,7 @@ Swift 공식 문서의 Concurrency 섹션은 Swift의 동시성(Concurrency) 기
 	•	await 키워드는 비동기 함수의 결과를 기다릴 때 사용합니다.
 
 📌 예제:
-
+```swift
 func fetchData() async -> String {
     return "Hello, Swift Concurrency!"
 }
@@ -18,7 +18,7 @@ Task {
     let result = await fetchData()
     print(result) // "Hello, Swift Concurrency!"
 }
-
+```
 💡 핵심 포인트
 	•	async 함수는 반드시 await으로 호출해야 함.
 	•	await은 비동기 함수의 실행을 기다렸다가 결과를 반환함.
@@ -30,19 +30,19 @@ Task {
 	•	Task.sleep()을 이용하면 일정 시간 대기 가능.
 
 📌 예제: Task 사용하기
-
+```swift
 Task {
     print("Start")
     try await Task.sleep(nanoseconds: 2_000_000_000) // 2초 대기
     print("End")
 }
-
+```
 ✅ TaskGroup
 	•	여러 개의 비동기 작업을 병렬 실행할 수 있음.
 	•	withTaskGroup을 사용하여 여러 개의 작업을 동시에 실행 가능.
 
 📌 예제: TaskGroup 사용하기
-
+```swift
 import Foundation
 
 func fetchMultipleData() async {
@@ -59,7 +59,7 @@ func fetchMultipleData() async {
 Task {
     await fetchMultipleData()
 }
-
+```
 💡 핵심 포인트
 	•	TaskGroup은 각 작업이 병렬적으로 실행될 수 있도록 함.
 	•	for await을 사용하여 비동기적으로 실행된 결과를 순차적으로 가져옴.
