@@ -1,0 +1,51 @@
+각 기술을 간략하게 설명해 드리겠습니다.
+
+⸻
+
+1. Multi-module App, Micro Feature Architecture, Example (Micro) App
+	•	Multi-module App: 하나의 앱을 여러 개의 모듈로 분리하여 개발하는 방식. 유지보수 및 빌드 속도 최적화에 유리함.
+	•	Micro Feature Architecture: 각 기능을 독립적인 모듈로 관리하는 아키텍처. 대규모 프로젝트에서 특정 기능을 빠르게 개발하고 배포할 수 있음.
+	•	Example (Micro) App: 마이크로 서비스 개념을 모바일 앱에 적용한 예제로, 독립적인 작은 기능들이 조합되어 전체 앱을 구성하는 방식.
+
+⸻
+
+2. Swift Concurrency, RxSwift, Combine
+	•	Swift Concurrency: Swift의 비동기 프로그래밍을 위한 async/await, Task, Actor 등을 활용하는 방식. 코드가 더 직관적이며 SwiftUI와 궁합이 좋음.
+	•	RxSwift: ReactiveX 기반의 iOS 반응형 프로그래밍 라이브러리. 비동기 데이터 스트림을 처리하는데 강점이 있음.
+	•	Combine: Apple이 공식 제공하는 반응형 프로그래밍 프레임워크로, RxSwift와 비슷한 기능을 제공하지만 Apple 생태계와의 통합성이 더 뛰어남.
+
+⸻
+
+3. AutoLayout, FlexLayout, PinLayout, SwiftUI
+	•	AutoLayout: iOS UI를 다양한 기기 크기에 맞춰 조정하는 레이아웃 시스템.
+	•	FlexLayout: Facebook의 Yoga 엔진을 기반으로 한 iOS 레이아웃 라이브러리. CSS의 flexbox와 유사한 방식으로 UI를 구성할 수 있음.
+	•	PinLayout: 선언형 방식으로 뷰의 위치와 크기를 설정하는 라이브러리. 성능이 뛰어나고 가독성이 높음.
+	•	SwiftUI: 선언형 방식의 UI 프레임워크로, View를 코드로 쉽게 구성할 수 있으며 Combine, Swift Concurrency와 잘 어울림.
+
+⸻
+
+4. RIBs, TCA, RxFlow, ReactorKit
+	•	RIBs (Router-Interactor-Builder): Uber에서 개발한 아키텍처로, 모듈화 및 독립적인 기능 개발에 초점. 대형 프로젝트에서 유지보수성이 높음.
+	•	TCA (The Composable Architecture): SwiftUI와 잘 맞는 단방향 상태 관리 아키텍처. Reducer를 활용하여 상태 변화 및 비즈니스 로직을 처리.
+	•	RxFlow: RxSwift 기반의 플로우(Flow) 관리 아키텍처. 네비게이션 흐름을 쉽게 제어할 수 있음.
+	•	ReactorKit: Vue, Redux와 비슷한 단방향 데이터 흐름을 가지는 iOS 아키텍처. RxSwift와 함께 사용됨.
+
+⸻
+
+5. XCTest, Quick, Nimble
+	•	XCTest: Apple이 제공하는 기본 테스트 프레임워크. 단위 테스트 및 UI 테스트 가능.
+	•	Quick: BDD(Behavior-Driven Development) 스타일의 테스트 프레임워크로, 테스트를 가독성 좋게 작성할 수 있음.
+	•	Nimble: Quick과 함께 사용되는 매처(Matcher) 라이브러리. 테스트 코드의 조건을 더 직관적으로 작성할 수 있음.
+
+⸻
+
+6. Jenkins, Fastlane, Tuist, SPM, CocoaPods
+	•	Jenkins: CI/CD(Continuous Integration/Continuous Deployment) 자동화 도구로, 앱 빌드 및 배포를 자동화하는 데 사용됨.
+	•	Fastlane: iOS 배포 및 스크린샷 생성, 코드 서명 등을 자동화하는 도구.
+	•	Tuist: Xcode 프로젝트 생성을 자동화하는 도구로, 멀티 모듈 프로젝트에서 특히 유용.
+	•	SPM (Swift Package Manager): Apple 공식 패키지 매니저로, Swift 라이브러리를 쉽게 관리할 수 있음.
+	•	CocoaPods: iOS 라이브러리 관리 도구로, 기존의 많은 오픈소스 라이브러리를 지원.
+
+⸻
+
+이 기술들은 현대적인 iOS 개발에서 필수적으로 사용되는 것들이며, 특히 모듈화 및 비동기 프로그래밍, 테스트 자동화, CI/CD에 강점을 가집니다. 요!
